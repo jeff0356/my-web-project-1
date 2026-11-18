@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zaytoun Coffee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f5ecdc; --cream-2:#ebdfc8; --brown:#3b2418; --brown-2:#6b4a37; --line:#d6c4a6; --accent:#8a5a3b;
+  --bg:var(--cream); --bg2:var(--cream-2); --fg:var(--brown); --muted:var(--brown-2); --rule:var(--line); --pill:var(--brown); --pill-fg:var(--cream);
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#2b1a11;--bg2:#362216;--fg:#f5ecdc;--muted:#cdb698;--rule:#5a3f2e;--pill:#f5ecdc;--pill-fg:#2b1a11;--bg2:#372217}
+}
+:root[data-theme="dark"]{--bg:#2b1a11;--bg2:#372217;--fg:#f5ecdc;--muted:#cdb698;--rule:#5a3f2e;--pill:#f5ecdc;--pill-fg:#2b1a11}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Young Serif",Georgia,serif;font-weight:400;margin:0;line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--rule)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:20px;padding-bottom:20px;gap:16px;flex-wrap:wrap}
+.logo{font-family:"Young Serif",Georgia,serif;font-size:1.4rem;text-decoration:none}
+nav{display:flex;gap:22px}
+nav a{text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--fg)}
+.hero{padding:88px 0 72px}
+.hero h1{font-size:clamp(2.6rem,8vw,4.8rem);max-width:12ch}
+.hero p{max-width:34ch;color:var(--muted);font-size:1.15rem;margin:22px 0 30px}
+.btn{display:inline-block;background:var(--pill);color:var(--pill-fg);padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:500}
+section{padding:64px 0;border-top:1px solid var(--rule)}
+h2{font-size:clamp(1.8rem,5vw,2.4rem);margin-bottom:20px}
+.about p{max-width:60ch;margin:0 0 14px;color:var(--muted)}
+.about p:first-of-type{color:var(--fg);font-size:1.2rem}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.filters button{font:inherit;font-weight:500;cursor:pointer;background:transparent;color:var(--fg);border:1.5px solid var(--fg);padding:8px 18px;border-radius:999px;transition:background .2s,color .2s}
+.filters button[aria-pressed="true"]{background:var(--pill);color:var(--pill-fg)}
+.group{margin-bottom:28px}
+.group h3{font-size:1.25rem;margin-bottom:6px}
+.group small{color:var(--muted)}
+.item{display:flex;align-items:baseline;gap:10px;padding:9px 0}
+.item .dots{flex:1;border-bottom:1.5px dotted var(--rule);transform:translateY(-4px)}
+.item .price{font-weight:700;white-space:nowrap}
+.item em{display:block;font-style:normal;font-size:.88rem;color:var(--muted)}
+.extras{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.extras span{background:var(--bg2);padding:8px 16px;border-radius:12px;font-size:.95rem}
+.hours{background:var(--bg2);border-top:0}
+#status{display:inline-block;margin-bottom:18px;font-weight:500}
+#status::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--muted);margin-right:8px}
+#status.open::before{background:#5c8a4a}
+table{border-collapse:collapse;width:100%;max-width:460px}
+td{padding:10px 0;border-bottom:1px solid var(--rule)}
+td:last-child{text-align:right}
+tr.today{font-weight:700}
+footer{padding:36px 0 48px;color:var(--muted);font-size:.95rem;border-top:1px solid var(--rule)}
+@media (max-width:520px){.hero{padding:56px 0 48px}section{padding:48px 0}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">Zaytoun Coffee</a>
+    <nav aria-label="Main"><a href="#about">About</a><a href="#menu">Menu</a><a href="#hours">Hours</a></nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Slow mornings, good coffee.</h1>
+    <p>100% Arabica, baked treats, and a warm seat by the window.</p>
+    <a class="btn" href="#menu">See the menu</a>
+  </div>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <h2>About us</h2>
+      <p>We are a small coffee shop built around one idea: a good cup should feel like being welcomed home.</p>
+      <p>Our specialty coffee is 100% Arabica, pulled fresh and served with oat, almond, or coconut milk if you prefer. Alongside it, we pour Moroccan mint tea the traditional way and bake cookies, breads, and cinnamon rolls every morning.</p>
+      <p>Stay for a pour over and a book, or take a brownie for the road.</p>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>Menu</h2>
+      <div class="filters" role="group" aria-label="Filter menu">
+        <button aria-pressed="true" data-f="all">All</button>
+        <button aria-pressed="false" data-f="coffee">Specialty coffee</button>
+        <button aria-pressed="false" data-f="notcoffee">Not coffee</button>
+        <button aria-pressed="false" data-f="treats">Treats &amp; eats</button>
+      </div>
+      <div id="list"></div>
+    </div>
+  </section>
+
+  <section class="hours" id="hours">
+    <div class="wrap">
+      <h2>Opening hours</h2>
+      <div id="status" role="status"></div>
+      <table><tbody id="hrs"></tbody></table>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Zaytoun Coffee &middot; Menu available in French and Arabic</div></footer>
+
+<script>
+var MENU = [
+  {id:"coffee", title:"Specialty coffee", note:"100% Arabica", items:[
+    ["Espresso",15],["Americano",18],["Flat White",22],["Cappuccino",24],["Café Latte",26],
+    ["Butterscotch Latte",30],["Mocha Latte",30],["Red Velvet Latte",30],["Single Origin Pour Over",35,"Market-Aza Derfnca"]],
+    extras:["Iced drinks +10 DH","Alt milk +8 DH (oat, almond, coconut)"]},
+  {id:"notcoffee", title:"Not coffee", items:[
+    ["Moroccan Mint Tea",15],["Infusion",20],["Orange Juice",20],["Hot Chocolate",28],["Chai Latte",28],
+    ["Pink Latte",30],["Matcha Latte",35],["Seasonal Fruit Smoothie",40]]},
+  {id:"treats", title:"Treats & eats", items:[
+    ["Chocolate Chip Cookie",17],["Banana Bread",20],["Lemon Poppy-Seed Bread",23],["Brownie",25],
+    ["Cinnamon Roll",30],["Quiche",30,"Eggs, broccoli, caramelized onion"],["Granola Bowl",35]]}
+];
+var list = document.getElementById("list");
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function render(f){
+  list.innerHTML = MENU.filter(function(g){return f==="all"||g.id===f;}).map(function(g){
+    return '<div class="group"><h3>'+esc(g.title)+(g.note?' <small>'+esc(g.note)+'</small>':'')+'</h3>'+
+      g.items.map(function(i){
+        return '<div class="item"><span>'+esc(i[0])+(i[2]?'<em>'+esc(i[2])+'</em>':'')+'</span><span class="dots"></span><span class="price">'+i[1]+' DH</span></div>';
+      }).join("")+
+      (g.extras?'<div class="extras">'+g.extras.map(function(e){return '<span>'+esc(e)+'</span>';}).join("")+'</div>':'')+'</div>';
+  }).join("");
+}
+document.querySelector(".filters").addEventListener("click", function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  document.querySelectorAll(".filters button").forEach(function(x){x.setAttribute("aria-pressed", x===b);});
+  render(b.dataset.f);
+});
+render("all");
+
+// Opening hours (sample times: edit as needed). Index 0 = Sunday.
+var H = [["Sunday","9:00","20:00"],["Monday","8:00","21:00"],["Tuesday","8:00","21:00"],["Wednesday","8:00","21:00"],["Thursday","8:00","21:00"],["Friday","8:00","22:00"],["Saturday","9:00","22:00"]];
+var order = [1,2,3,4,5,6,0], now = new Date(), d = now.getDay();
+document.getElementById("hrs").innerHTML = order.map(function(i){
+  return '<tr'+(i===d?' class="today"':'')+'><td>'+H[i][0]+'</td><td>'+H[i][1]+' – '+H[i][2]+'</td></tr>';
+}).join("");
+var mins = now.getHours()*60+now.getMinutes();
+function m(t){var p=t.split(":");return +p[0]*60+ +p[1];}
+var st = document.getElementById("status");
+if(mins>=m(H[d][1]) && mins<m(H[d][2])){st.className="open";st.textContent="We’re open now, until "+H[d][2];}
+else{st.textContent="We’re closed right now";}
+</script>
+</body>
+</html>
